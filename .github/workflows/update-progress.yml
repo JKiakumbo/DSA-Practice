@@ -1,0 +1,48 @@
+name: Update Progress
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Count solved problems
+        id: count
+        run: |
+          total=$(find problems -name "solution.*" | wc -l)
+
+          # Count by difficulty from problem READMEs
+          easy=$(grep -ri "Easy" problems || true | wc -l)
+          medium=$(grep -ri "Medium" problems || true | wc -l)
+          hard=$(grep -ri "Hard" problems || true | wc -l)
+
+          echo "total=$total" >> $GITHUB_OUTPUT
+          echo "easy=$easy" >> $GITHUB_OUTPUT
+          echo "medium=$medium" >> $GITHUB_OUTPUT
+          echo "hard=$hard" >> $GITHUB_OUTPUT
+
+      - name: Update README.md
+        run: |
+          new_total=${{ steps.count.outputs.total }}
+          new_easy=${{ steps.count.outputs.easy }}
+          new_medium=${{ steps.count.outputs.medium }}
+          new_hard=${{ steps.count.outputs.hard }}
+
+          sed -i "s/Problems solved: .*/Problems solved: $new_total/" README.md
+          sed -i "s|Problems%20Solved-[0-9]*-blue|Problems%20Solved-$new_total-blue|" README.md
+          sed -i "s|Easy-[0-9]*-brightgreen|Easy-$new_easy-brightgreen|" README.md
+          sed -i "s|Medium-[0-9]*-yellow|Medium-$new_medium-yellow|" README.md
+          sed -i "s|Hard-[0-9]*-red|Hard-$new_hard-red|" README.md
+
+          git config --global user.name 'JKiakumbo'
+          git config --global user.email 'jkiakumbo.icloud.com'
+          git add README.md
+          git commit -m "Update progress badges"
+          git push
