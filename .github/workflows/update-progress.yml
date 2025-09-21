@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
+    paths:
+      - "problems/**/solution.*"   # Only run if a solution file changes
+  workflow_dispatch:              # Still allow manual runs
 
 jobs:
   update-progress:
@@ -44,5 +46,4 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add README.md
-          git commit -m "Update progress badges"
-          git push
+          git commit -m "Update progress badges" || echo "No changes to commit"
