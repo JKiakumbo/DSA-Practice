@@ -41,8 +41,8 @@ jobs:
           sed -i "s|Medium-[0-9]*-yellow|Medium-$new_medium-yellow|" README.md
           sed -i "s|Hard-[0-9]*-red|Hard-$new_hard-red|" README.md
 
-          git config --global user.name 'JKiakumbo'
-          git config --global user.email 'jkiakumbo.icloud.com'
+          git config --global user.name JKiakumbo
+          git config --global user.email jkiakumbo.icloud.com
           git add README.md
           git commit -m "Update progress badges"
           git push
