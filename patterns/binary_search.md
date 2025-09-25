@@ -29,6 +29,9 @@
 *(This is the most important section. Keep the code clean and commented.)*
 
 ```python
+from typing import List
+
+
 def binary_search(arr: List[int], target: int) -> int:
     left, right = 0, len(arr) - 1
     boundary_index = -1  # First true index
@@ -82,10 +85,11 @@ def binary_search(arr: List[int], target: int) -> int:
 
 *(For each problem you solve, add a quick entry. Focus on the insight, not the code.)*
 
-| Problem Name                                                                                                               | Difficulty | Key Insight & Why This Pattern                                     | Edge Cases                                                                              | Date Solved  |
-|:---------------------------------------------------------------------------------------------------------------------------|:-----------|:-------------------------------------------------------------------|:----------------------------------------------------------------------------------------|:-------------|
-| [Find the First True in a Sorted Boolean Array](https://algo.monster/problems/binary_search_boundary)                      | Easy       | Classic template application. Array is sorted, need O(log n) time. | Single element, target not present                                                      | [23-09-2025] |
-| [First Element Not Smaller Than Target](https://algo.monster/problems/binary_search_first_element_not_smaller_than_target) | Easy       | Adapted feasible function `condition: arr[mid] >= target`.         | all elements are greater or iqual target, only last elements is greater or iqual target | [24-09-2025] |
+| Problem Name                                                                                                               | Difficulty | Key Insight & Why This Pattern                                                                                  | Edge Cases                                                                              | Date Solved  |
+|:---------------------------------------------------------------------------------------------------------------------------|:-----------|:----------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------|:-------------|
+| [Find the First True in a Sorted Boolean Array](https://algo.monster/problems/binary_search_boundary)                      | Easy       | Classic template application. Array is sorted, need O(log n) time.                                              | Single element, target not present                                                      | [23-09-2025] |
+| [First Element Not Smaller Than Target](https://algo.monster/problems/binary_search_first_element_not_smaller_than_target) | Easy       | Adapted feasible function `condition: arr[mid] >= target`.                                                      | all elements are greater or iqual target, only last elements is greater or iqual target | [24-09-2025] |
+| [Find Element in Sorted Array with Duplicates](https://algo.monster/problems/binary_search_duplicates)                     | Medium     | Adapted feasible function `condition: arr[mid] >= target`. Update boundary index only when `arr[mid] == target` | all elements are greater or iqual target, only last elements is greater or iqual target | [25-09-2025] |
 
 ---
 
