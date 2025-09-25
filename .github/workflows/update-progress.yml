@@ -21,9 +21,9 @@ jobs:
           total=$(find problems -name "solution.*" | wc -l)
 
           # Count by difficulty from problem READMEs
-          easy=$(grep -ri "Easy" problems || true | wc -l)
-          medium=$(grep -ri "Medium" problems || true | wc -l)
-          hard=$(grep -ri "Hard" problems || true | wc -l)
+          easy=$(grep -ri "Difficulty.*Easy" problems || true | wc -l)
+          medium=$(grep -ri "Difficulty.*Medium" problems || true | wc -l)
+          hard=$(grep -ri "Difficulty.*Hard" problems || true | wc -l)
 
           echo "total=$total" >> $GITHUB_OUTPUT
           echo "easy=$easy" >> $GITHUB_OUTPUT

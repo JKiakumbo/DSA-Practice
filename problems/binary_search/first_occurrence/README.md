@@ -1,9 +1,9 @@
 # Find Element in Sorted Array with Duplicates
-Difficulty: Easy
 
 ## Problem Metadata
 - **Name:** Find Element in Sorted Array with Duplicates
 - **Link:** https://algo.monster/problems/binary_search_duplicates
+- **Difficulty:** Easy
 - **Pattern:** Binary Search
 - **Tags:** array, binary-search, boundary-search
 
