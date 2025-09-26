@@ -37,11 +37,11 @@ jobs:
           new_medium=${{ steps.count.outputs.medium }}
           new_hard=${{ steps.count.outputs.hard }}
 
-          sed -i "s/Problems solved: .*/Problems solved: $new_total/" README.md
-          sed -i "s|Problems%20Solved-[0-9]*-blue|Problems%20Solved-$new_total-blue|" README.md
-          sed -i "s|Easy-[0-9]*-brightgreen|Easy-$new_easy-brightgreen|" README.md
-          sed -i "s|Medium-[0-9]*-yellow|Medium-$new_medium-yellow|" README.md
-          sed -i "s|Hard-[0-9]*-red|Hard-$new_hard-red|" README.md
+          # Update shields.io badges
+          sed -i -E "s/Problems%20Solved-[0-9]+-blue/Problems%20Solved-$new_total-blue/" README.md
+          sed -i -E "s/Easy-[0-9]+-brightgreen/Easy-$new_easy-brightgreen/" README.md
+          sed -i -E "s/Medium-[0-9]+-yellow/Medium-$new_medium-yellow/" README.md
+          sed -i -E "s/Hard-[0-9]+-red/Hard-$new_hard-red/" README.md
 
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
