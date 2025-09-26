@@ -90,6 +90,7 @@ def binary_search(arr: List[int], target: int) -> int:
 | [Find the First True in a Sorted Boolean Array](https://algo.monster/problems/binary_search_boundary)                      | Easy       | Classic template application. Array is sorted, need O(log n) time.                                              | Single element, target not present                                                      | [23-09-2025] |
 | [First Element Not Smaller Than Target](https://algo.monster/problems/binary_search_first_element_not_smaller_than_target) | Easy       | Adapted feasible function `condition: arr[mid] >= target`.                                                      | all elements are greater or iqual target, only last elements is greater or iqual target | [24-09-2025] |
 | [Find Element in Sorted Array with Duplicates](https://algo.monster/problems/binary_search_duplicates)                     | Medium     | Adapted feasible function `condition: arr[mid] >= target`. Update boundary index only when `arr[mid] == target` | all elements are greater or iqual target, only last elements is greater or iqual target | [25-09-2025] |
+| [Square Root Estimation](https://algo.monster/problems/sqrt)                                                               | Medium     | Adapted feasible function `condition: mid >= n`, initialise `left = 1` and `right = n`                          | `n=0`, non-perfect square root                                                          | [26-09-2025] |
 
 ---
 
