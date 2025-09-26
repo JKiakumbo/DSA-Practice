@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - "problems/**/solution.*"   # Only run if a solution file changes
-  workflow_dispatch:              # Still allow manual runs
+      - "problems/**/solution.*"   # Run only when a solution file changes
+  workflow_dispatch:              # Allow manual trigger
 
 jobs:
   update-progress:
@@ -20,10 +20,10 @@ jobs:
         run: |
           total=$(find problems -name "solution.*" | wc -l)
 
-          # Count by difficulty from problem READMEs
-          easy=$(grep -r "Difficulty.*Easy" problems | wc -l || true)
-          medium=$(grep -r "Difficulty.*Medium" problems | wc -l || true)
-          hard=$(grep -r "Difficulty.*Hard" problems | wc -l || true)
+          # Count by difficulty (look inside problem README.md files)
+          easy=$(grep -r "\*\*Difficulty:\*\* Easy" problems | wc -l || true)
+          medium=$(grep -r "\*\*Difficulty:\*\* Medium" problems | wc -l || true)
+          hard=$(grep -r "\*\*Difficulty:\*\* Hard" problems | wc -l || true)
 
           echo "total=$total" >> $GITHUB_OUTPUT
           echo "easy=$easy" >> $GITHUB_OUTPUT
@@ -37,7 +37,13 @@ jobs:
           new_medium=${{ steps.count.outputs.medium }}
           new_hard=${{ steps.count.outputs.hard }}
 
-          # Update shields.io badges
+          # Update text progress section
+          sed -i -E "s/Problems solved: [0-9]+/Problems solved: $new_total/" README.md
+          sed -i -E "s/Easy: [0-9]+/Easy: $new_easy/" README.md
+          sed -i -E "s/Medium: [0-9]+/Medium: $new_medium/" README.md
+          sed -i -E "s/Hard: [0-9]+/Hard: $new_hard/" README.md
+
+          # Update shields.io badges (supports line breaks between them)
           sed -i -E "s/Problems%20Solved-[0-9]+-blue/Problems%20Solved-$new_total-blue/" README.md
           sed -i -E "s/Easy-[0-9]+-brightgreen/Easy-$new_easy-brightgreen/" README.md
           sed -i -E "s/Medium-[0-9]+-yellow/Medium-$new_medium-yellow/" README.md
@@ -47,3 +53,9 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add README.md
           git commit -m "Update progress badges" || echo "No changes to commit"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
