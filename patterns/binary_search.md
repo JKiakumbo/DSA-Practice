@@ -3,7 +3,7 @@
 **Pattern Name:** Binary Search
 **Status:** Learning
 **Date Started:** 22.09.2025
-**Date Mastered:** [Date]
+**Date Mastered:** 01.10.2025
 
 ---
 
