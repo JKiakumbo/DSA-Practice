@@ -1,4 +1,4 @@
-# Square Root Estimation
+# Remove Duplicates
 
 ## Problem Metadata
 - **Name:** Remove Duplicates
