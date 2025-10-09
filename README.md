@@ -3,9 +3,9 @@
 This repository contains my solutions to coding problems from LeetCode and other platforms.  
 The goal is to practice **data structures, algorithms, and problem-solving patterns** to prepare for interviews and grow as an engineer.
 ## 📊 Progress
-![Problems Solved](https://img.shields.io/badge/Problems%20Solved-11-blue)
+![Problems Solved](https://img.shields.io/badge/Problems%20Solved-12-blue)
 
-![Easy](https://img.shields.io/badge/Easy-7-brightgreen)
+![Easy](https://img.shields.io/badge/Easy-8-brightgreen)
 ![Medium](https://img.shields.io/badge/Medium-3-yellow)
 ![Hard](https://img.shields.io/badge/Hard-1-red)
 
