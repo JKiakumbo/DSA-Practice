@@ -98,9 +98,9 @@ def two_pointers_opposite(arr):
 
 *(For each problem you solve, add a quick entry. Focus on the insight, not the code.)*
 
-| Problem Name                                                                                          | Difficulty | Key Insight & Why This Pattern                                     | Edge Cases                         | Date Solved  |
-|:------------------------------------------------------------------------------------------------------|:-----------|:-------------------------------------------------------------------|:-----------------------------------|:-------------|
-| [Find the First True in a Sorted Boolean Array](https://algo.monster/problems/binary_search_boundary) | Easy       | Classic template application. Array is sorted, need O(log n) time. | Single element, target not present | [23-09-2025] |
+| Problem Name                                                                                          | Difficulty | Key Insight & Why This Pattern                                     | Edge Cases                         | Date Solved |
+|:------------------------------------------------------------------------------------------------------|:-----------|:-------------------------------------------------------------------|:-----------------------------------|:------------|
+| [Find the First True in a Sorted Boolean Array](https://algo.monster/problems/binary_search_boundary) | Easy       | Classic template application. Array is sorted, need O(log n) time. | Single element, target not present | 23-09-2025  |
 
 ---
 
