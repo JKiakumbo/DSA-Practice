@@ -1,4 +1,4 @@
-# CFixed Size Sliding Window
+# Fixed Size Sliding Window
 
 ## Problem Metadata
 - **Name:** Fixed Size Sliding Window
