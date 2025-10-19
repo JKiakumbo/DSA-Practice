@@ -83,20 +83,21 @@ def binary_search(arr: List[int], target: int) -> int:
 
 ## **4. ✅ Solved Problems Log**
 
-*(For each problem you solve, add a quick entry. Focus on the insight, not the code.)*
+*(For each problem you solve, add a quick entry.)*
 
-| Problem Name                                                                                                               | Difficulty | Key Insight & Why This Pattern                                                                                                                                                         | Edge Cases                                                                              | Date Solved |
-|:---------------------------------------------------------------------------------------------------------------------------|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------|:------------|
-| [Find the First True in a Sorted Boolean Array](https://algo.monster/problems/binary_search_boundary)                      | Easy       | Classic template application. Array is sorted, need O(log n) time.                                                                                                                     | Single element, target not present                                                      | 23-09-2025  |
-| [First Element Not Smaller Than Target](https://algo.monster/problems/binary_search_first_element_not_smaller_than_target) | Easy       | Adapted feasible function `condition: arr[mid] >= target`.                                                                                                                             | all elements are greater or iqual target, only last elements is greater or iqual target | 24-09-2025  |
-| [Find Element in Sorted Array with Duplicates](https://algo.monster/problems/binary_search_duplicates)                     | Medium     | Adapted feasible function `condition: arr[mid] >= target`. Update boundary index only when `arr[mid] == target`                                                                        | all elements are greater or iqual target, only last elements is greater or iqual target | 25-09-2025  |
-| [Square Root Estimation](https://algo.monster/problems/sqrt)                                                               | Medium     | Adapted feasible function `condition: mid >= n`, initialise `left = 1` and `right = n`                                                                                                 | `n=0`, non-perfect square root                                                          | 26-09-2025  |
-| [Find Minimum in Rotated Sorted Array](https://algo.monster/problems/min_in_rotated_sorted_array)                          | Medium     | Adapted feasible function `condition: arr[mid] <= arr[-1]`                                                                                                                             | min is last or first element, all elements are equals                                   | 30-09-2025  |
-| [The Peak of a Mountain Array](https://algo.monster/problems/peak_of_mountain_array)                                       | Medium     | Adapted feasible function `condition: arr[mid] > arr[mid + 1]`                                                                                                                         | peak is the last element                                                                | 30-09-2025  |
-| [Newspapers](https://algo.monster/problems/newspapers_split)                                                               | Hard       | Use a helper function to determine the number of coworkers needed if each coworker can read up to mid time,`get_number_of_needed_workers(newspapers_read_times, mid) <= num_coworkers` | single newspaper's read time exceeds the mid value                                      | 01-10-2025  |
+| Problem Name                                                                                            | Difficulty | Date Solved |
+|:--------------------------------------------------------------------------------------------------------|:-----------|:------------|
+| [Find the First True in a Sorted Boolean Array](/problems/binary_search/find_boundary/README.md)        | Easy       | 23-09-2025  |
+| [First Element Not Smaller Than Target](/problems/binary_search/first_not_smaller/README.md)            | Easy       | 24-09-2025  |
+| [Find Element in Sorted Array with Duplicates](/problems/binary_search/find_first_occurrence/README.md) | Medium     | 25-09-2025  |
+| [Square Root Estimation](/problems/binary_search/square_root/README.md)                                 | Medium     | 26-09-2025  |
+| [Find Minimum in Rotated Sorted Array](/problems/binary_search/find_min_rotated/README.md)              | Medium     | 30-09-2025  |
+| [The Peak of a Mountain Array](/problems/binary_search/peak_of_mountain_array/README.md)                | Medium     | 30-09-2025  |
+| [Newspapers](/problems/binary_search/newspapers_split/README.md)                                        | Hard       | 01-10-2025  |
 
 ---
 
 ## **5. 📚 Resources & Links**
+
 * **AlgoMonster Concept Link:** [Binary Search](https://algo.monster/problems/binary_search_intro)
 * **NeetCode Video Explanation:** [Binary Search](https://www.youtube.com/watch?v=s4DPM8ct1pI)
