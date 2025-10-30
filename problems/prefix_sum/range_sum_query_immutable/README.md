@@ -35,6 +35,10 @@ def range_sum_query_immutable(nums: list[int], left: int, right: int) -> int:
     return cumulative_sum[right + 1] - cumulative_sum[left]
 ```
 
+> **Considerations:** 
+> - This method is particularly useful when the array is static (immutable) and there are many queries.
+> - If the array is frequently updated, advanced data structures like segment trees might be more appropriate. However, they are more complex to implement and may require more memory and not often asked in interviews.
+
 ## Approach Steps
 1. Create a prefix sum array where each element at index `i` contains the sum of elements from index `0` to `i` in the original array.
 2. To get the sum of elements between indices `left` and `right`, use the prefix sum array:
