@@ -5,7 +5,7 @@
 - **Link:** https://algo.monster/problems/product_of_array_except_self
 - **Difficulty:** Medium
 - **Pattern:** Prefix Sum
-- **Tags:** 
+- **Tags:** prefix-sum, array, product-of-array-except-self
 
 ## Key Dates
 - **First Attempt:** 30-10-2025
