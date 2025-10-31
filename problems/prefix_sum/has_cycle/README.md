@@ -44,7 +44,7 @@ def has_cycle(nodes: Node) -> bool:
 
 ## Complexity
 - **Time:** O(n)
-- **Space:** O(n)
+- **Space:** O(1)
 
 ## Lessons Learned
 ### Key Insights
